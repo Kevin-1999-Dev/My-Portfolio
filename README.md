@@ -1,3 +1,40 @@
+# Portfolio V2 — Cyberpunk UI
+
+New portfolio for **Kaung Zaw Han (Kevin)**, built page by page on Next.js 16 + Tailwind 4.
+
+## Adding the profile photo and CV (not ready yet)
+
+Both are placeholders right now. To activate them:
+
+1. Save your photo as `public/images/profile.jpg`
+2. Save your CV as `public/cv.pdf`
+3. Open `lib/profile.ts` and change:
+   ```ts
+   flags: {
+     profilePhoto: true,
+     cv: true,
+   }
+   ```
+
+That's it — the home page swaps the placeholder card and the disabled "COMING SOON" button automatically. All bio text, facts, social links and stats also live in `lib/profile.ts`.
+
+## Theme, typography & background
+
+- **Dark / light mode** — toggle in the navbar (top right). The choice is saved in `localStorage` and applied before first paint, so there is no flash. Theme colors live at the top of `app/globals.css` (`--neon-*`, `--panel-bg`, `--ink`, `--muted`, etc.).
+- **Font sizes** — key sizes are set with Tailwind classes inside `components/` (hero, section headings, card values, nav links). Adjust them there.
+- **Animated background** — `.cyber-backdrop` in `app/layout.tsx` layers a thunderstorm (`components/CyberThunder.tsx`: three branching lightning bolts with two independent strike cycles + sky flashes) behind neon rain (72 angled glowing drops from `components/CyberRain.tsx`), plus a slow perspective grid, faint 3D rings, drifting orbs and a sweep beam. All keyframes are in `app/globals.css`, and motion respects `prefers-reduced-motion`.
+
+## Project structure
+
+- `app/page.tsx` — Home page (hero, profile card, facts, CV panel)
+- `app/about`, `app/projects`, `app/contact` — themed placeholders for upcoming pages
+- `components/` — Navbar, Footer, Hero, ProfileCard, Facts, CvDownload, TypeWriter
+- `app/globals.css` — cyberpunk theme, neon palette, glitch/scanline effects
+- `lib/profile.ts` — single source of truth for all profile content, including the `modal` detail data for every Field Notes card
+- Field Notes cards are clickable and open a detail popup (Esc / backdrop / close button all dismiss it; focus returns to the card)
+
+---
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
