@@ -31,12 +31,12 @@ export default function ProfileCard() {
 
             {hasPhoto ? (
               <Image
-                src="/images/profile.jpg"
+                src="/images/profile.png"
                 alt={profile.name}
                 fill
                 priority
                 sizes="(max-width: 640px) 80vw, 360px"
-                className="object-cover"
+                className="object-cover object-[65%_center]"
               />
             ) : (
               <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 text-center">
@@ -72,9 +72,6 @@ export default function ProfileCard() {
           <h2 className="mt-1 font-display text-2xl font-bold text-ink">
             {profile.name}
           </h2>
-          <p className="font-mono text-xs text-neon-magenta">
-            A.K.A. {profile.alias}
-          </p>
         </div>
 
         <dl className="theme-divider mt-5 space-y-2 border-t pt-4 font-mono text-xs">

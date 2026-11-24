@@ -8,14 +8,14 @@ import CyberThunder from "@/components/CyberThunder";
 
 export const metadata: Metadata = {
   title: {
-    default: "Kaung Zaw Han // Kevin — Software & Web Developer",
+    default: "Kaung Zaw Han — Software & Web Developer",
     template: "%s // KZH.DEV",
   },
   description:
-    "Cyberpunk portfolio of Kaung Zaw Han (Kevin) — a software and web developer born in Yangon, Myanmar and now based in Bangkok, Thailand, building reliable digital products.",
+    "Cyberpunk portfolio of Kaung Zaw Han — a software and web developer born in Yangon, Myanmar and now based in Bangkok, Thailand, building reliable digital products.",
   keywords: [
     "Kaung Zaw Han",
-    "Kevin",
+    "Han",
     "portfolio",
     "software developer",
     "web developer",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Kaung Zaw Han" }],
   openGraph: {
-    title: "Kaung Zaw Han // Kevin — Software & Web Developer",
+    title: "Kaung Zaw Han — Software & Web Developer",
     description: "Systems behind the screens. Explore the portfolio.",
     type: "website",
   },

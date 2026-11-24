@@ -1,22 +1,16 @@
 # Portfolio V2 — Cyberpunk UI
 
-New portfolio for **Kaung Zaw Han (Kevin)**, built page by page on Next.js 16 + Tailwind 4.
+New portfolio for **Kaung Zaw Han (Han)**, built page by page on Next.js 16 + Tailwind 4.
 
 ## Adding the profile photo and CV (not ready yet)
 
 Both are placeholders right now. To activate them:
 
-1. Save your photo as `public/images/profile.jpg`
+1. Save your photo as `public/images/profile.png` (already added — `profilePhoto` is on)
 2. Save your CV as `public/cv.pdf`
-3. Open `lib/profile.ts` and change:
-   ```ts
-   flags: {
-     profilePhoto: true,
-     cv: true,
-   }
-   ```
+3. Open `lib/profile.ts` and set `flags.cv = true`
 
-That's it — the home page swaps the placeholder card and the disabled "COMING SOON" button automatically. All bio text, facts, social links and stats also live in `lib/profile.ts`.
+All bio text, facts, social links, stats and work experience live in `lib/profile.ts`.
 
 ## Theme, typography & background
 
@@ -27,7 +21,8 @@ That's it — the home page swaps the placeholder card and the disabled "COMING 
 ## Project structure
 
 - `app/page.tsx` — Home page (hero, profile card, facts, CV panel)
-- `app/about`, `app/projects`, `app/contact` — themed placeholders for upcoming pages
+- `app/projects` — themed placeholder for the upcoming Project page
+- `app/journey` — work-experience page; entries come from `profile.experience` in `lib/profile.ts`
 - `components/` — Navbar, Footer, Hero, ProfileCard, Facts, CvDownload, TypeWriter
 - `app/globals.css` — cyberpunk theme, neon palette, glitch/scanline effects
 - `lib/profile.ts` — single source of truth for all profile content, including the `modal` detail data for every Field Notes card

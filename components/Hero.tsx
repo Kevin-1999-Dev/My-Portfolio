@@ -37,7 +37,7 @@ export default function Hero() {
               {profile.name}
             </span>
             <span className="mt-3 block text-xl text-neon-magenta sm:text-3xl">
-              ALIAS: {profile.alias.toUpperCase()}
+              You can call me <span className="text-ink">{profile.alias}</span>
             </span>
           </h1>
 

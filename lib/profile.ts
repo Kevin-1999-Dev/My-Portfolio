@@ -25,14 +25,26 @@ export type DetailSection = {
   readonly rows: readonly { readonly label: string; readonly value: string }[];
 };
 
+/** Work-experience entries shown on the Journey page. */
+export type ExperienceItem = {
+  readonly code: string;
+  readonly period: string;
+  readonly role: string;
+  readonly company: string;
+  readonly location: string;
+  readonly icon: "briefcase" | "terminal" | "server" | "code";
+  readonly description: string;
+  readonly highlights: readonly string[];
+};
+
 const BIRTHPLACE = "Yangon, Myanmar";
-const DEPARTED_MYANMAR = "03 Mar 2024";
+const DEPARTED_MYANMAR = "Mar 2025";
 
 export const profile = {
   name: "Kaung Zaw Han",
-  alias: "Kevin",
+  alias: "Han",
   initials: "KZH",
-  handle: "kevin-1999-dev",
+  handle: "han-1999-dev",
   code: "OPERATIVE_KZH_1999",
   roles: ["Software Developer", "Web Developer"],
   location: "Bangkok, Thailand",
@@ -41,10 +53,10 @@ export const profile = {
   availableForWork: true,
 
   shortBio:
-    "Backend-focused developer who started with C# desktop apps in 2022 and quickly fell for the web. I build reliable systems with PHP & Laravel, while sharpening the front end along the way.",
+    "Backend-focused developer who first learned C# and Windows applications in 2022, then found my real interest in web development. I build reliable systems with PHP & Laravel, while sharpening the front end along the way.",
 
   fullBio:
-    `I'm Kaung Zaw Han, but you can call me Kevin — a nickname inspired by the kid in my favorite childhood movie, Home Alone. Born in ${BIRTHPLACE}, I left Myanmar on ${DEPARTED_MYANMAR} and now live in Bangkok, Thailand. Since May 2022 I've been in software development, starting with C# and Windows applications before discovering my real passion for the web. Today I spend most of my time on the back end (PHP, Laravel, REST APIs) and I'm constantly leveling up the front end too. My goal: build a globally impactful product and grow from junior to senior to leadership.`,
+    `I'm Kaung Zaw Han, but you can call me Han. Born in ${BIRTHPLACE}, I left Myanmar in ${DEPARTED_MYANMAR} and arrived in Chiang Mai, Thailand that same month — Bangkok is where I live now. I got my first job in 2024 at Zote by Focus Innovation. In 2022 I first learned C# and Windows application development, but I quit that path — it's something I learned, not professional experience. Then I discovered web development and found my real passion. Today I spend most of my time on the back end (PHP, Laravel, REST APIs) and I'm constantly leveling up the front end too. My goal: build a globally impactful product and grow from junior to senior to leadership.`,
 
   stats: [
     {
@@ -55,12 +67,12 @@ export const profile = {
         title: "04+ Years Coding",
         subtitle: "TIMELINE // MAY 2022 → PRESENT",
         paragraphs: [
-          "My journey began in May 2022 with C# and Windows desktop applications. A few months later I discovered web development and never looked back.",
+          "In 2022 I first learned C# and Windows application development, but I quit that path — it was learning only, not professional experience. I then discovered web development and never looked back.",
           "Since then I've moved through HTML, CSS, JavaScript, PHP and Laravel — always with a bias toward the back end.",
         ],
         rows: [
           { label: "STARTED", value: "May 2022" },
-          { label: "FIRST STACK", value: "C# / Windows" },
+          { label: "FIRST LEARNED", value: "C# / Windows apps" },
           { label: "PIVOT", value: "Web development" },
           { label: "CURRENT FOCUS", value: "PHP & Laravel" },
         ],
@@ -81,7 +93,7 @@ export const profile = {
           { label: "BACK-END", value: "PHP · Laravel · REST APIs" },
           { label: "DATABASE", value: "MySQL" },
           { label: "FRONT-END", value: "HTML · CSS · JavaScript · Vue.js · Tailwind" },
-          { label: "OTHER", value: "C# · Bootstrap · Git / GitHub" },
+          { label: "OTHER", value: "Bootstrap · Git / GitHub" },
         ],
       } satisfies DetailSection,
     },
@@ -116,9 +128,9 @@ export const profile = {
           "The goal has always been simple: keep improving, ship useful things, and eventually build something with global reach.",
         ],
         rows: [
-          { label: "MUSIC", value: "K-pop · R&B · HipHop · Pop · EDM" },
+          { label: "MUSIC", value: "R&B · HipHop · Pop · EDM" },
           { label: "SPORT", value: "Football" },
-          { label: "LANGUAGES", value: "MM · EN · JP (N-5) · KR (basic)" },
+          { label: "LANGUAGES", value: "Burmese · English" },
           { label: "NEXT UP", value: "A global-impact product" },
         ],
       } satisfies DetailSection,
@@ -135,34 +147,33 @@ export const profile = {
         title: "Bangkok, Thailand",
         subtitle: "CURRENT COORDINATES",
         paragraphs: [
-          `I was born in Yangon, Myanmar and lived there until I left on ${DEPARTED_MYANMAR}. Since then, Bangkok has been home.`,
-          "I'm the only son in my family, and I carry both places with me — Yangon is where I started, Bangkok is where I'm building now.",
+          `I was born in Yangon, Myanmar and left in ${DEPARTED_MYANMAR}. I arrived in Chiang Mai, Thailand that same month, and Bangkok is where I live now.`,
+          "Yangon is where I started, Chiang Mai was my first stop in Thailand, and Bangkok is where I'm building now.",
         ],
         rows: [
           { label: "BORN", value: BIRTHPLACE },
-          { label: "CURRENT", value: "Bangkok, Thailand" },
           { label: "LEFT MYANMAR", value: DEPARTED_MYANMAR },
-          { label: "TIMEZONE", value: "ICT · UTC+7" },
+          { label: "CHIANG MAI", value: "Mar 2025" },
+          { label: "CURRENT", value: "Bangkok, Thailand" },
         ],
       } satisfies DetailSection,
     },
     {
       icon: "user" as const,
       label: "ALIAS",
-      value: "Kevin",
-      detail: "Named after the Home Alone kid",
+      value: "Han",
+      detail: "Short form of Kaung Zaw Han",
       modal: {
-        title: "Alias: Kevin",
+        title: "Alias: Han",
         subtitle: "IDENTITY // FILE 002",
         paragraphs: [
-          "My full name is Kaung Zaw Han, but most people call me Kevin — that's my nickname, inspired by the child actor in my favorite childhood movie, Home Alone.",
+          "My full name is Kaung Zaw Han, but most people call me Han — the last part of my name, and the one that sticks.",
           "Either name works. If you're wondering which one to use, pick whichever is easier for you.",
         ],
         rows: [
           { label: "FULL NAME", value: "Kaung Zaw Han" },
-          { label: "NICKNAME", value: "Kevin" },
-          { label: "INSPIRATION", value: "Home Alone" },
-          { label: "GITHUB", value: "@Kevin-1999-Dev" },
+          { label: "NICKNAME", value: "Han" },
+          { label: "INITIALS", value: "KZH" },
         ],
       } satisfies DetailSection,
     },
@@ -170,18 +181,18 @@ export const profile = {
       icon: "terminal" as const,
       label: "CODE SINCE",
       value: "May 2022",
-      detail: "Started with C# desktop applications",
+      detail: "First learned C# / Windows apps",
       modal: {
         title: "Coding Since May 2022",
         subtitle: "ORIGIN STORY // COMMIT 001",
         paragraphs: [
-          "I started in software development in May 2022, first with C# and Windows applications. That's where I learned the basics of programming.",
-          "Then I discovered web development — HTML, CSS and JavaScript — and my interest grew fast. I later explored PHP and Laravel and found I enjoyed back-end work even more.",
+          "In 2022 I started learning C# and Windows application development. I quit along that path, so it's something I learned rather than professional experience. Then I discovered web development — HTML, CSS and JavaScript — and my interest grew fast.",
+          "In 2024 I got my first job at Zote by Focus Innovation, where learning became real engineering. I later explored PHP and Laravel and found I enjoyed back-end work even more.",
         ],
         rows: [
           { label: "STARTED", value: "May 2022" },
-          { label: "FIRST LANGUAGE", value: "C#" },
-          { label: "WEB BASICS", value: "HTML · CSS · JavaScript" },
+          { label: "FIRST LEARNED", value: "C# · Windows apps" },
+          { label: "FIRST JOB", value: "Zote by Focus Innovation · 2024" },
           { label: "BACK-END", value: "PHP · Laravel" },
         ],
       } satisfies DetailSection,
@@ -229,20 +240,18 @@ export const profile = {
     {
       icon: "globe" as const,
       label: "LANGUAGES",
-      value: "MM · EN · JP · KR",
-      detail: "Native · Conversational · N-5 · Basic",
+      value: "Burmese · English",
+      detail: "Native · Conversational",
       modal: {
         title: "Languages",
-        subtitle: "COMMS // FOUR SYSTEMS",
+        subtitle: "COMMS // TWO SYSTEMS",
         paragraphs: [
-          "Myanmar is my native tongue and English is conversational — good enough to collaborate, explain ideas and write code documentation.",
-          "I also study Japanese (JLPT N-5) and Korean at a basic level. Both are works in progress, but I enjoy the learning process.",
+          "Burmese is my native tongue and English is conversational — good enough to collaborate, explain ideas and write code documentation.",
+          "Those are the two languages I use day to day, both in conversation and in code.",
         ],
         rows: [
-          { label: "MYANMAR", value: "Native" },
+          { label: "BURMESE", value: "Native" },
           { label: "ENGLISH", value: "Conversational" },
-          { label: "JAPANESE", value: "JLPT N-5" },
-          { label: "KOREAN", value: "Basic" },
         ],
       } satisfies DetailSection,
     },
@@ -250,43 +259,29 @@ export const profile = {
       icon: "music" as const,
       label: "OFF-DUTY",
       value: "Music & Football",
-      detail: "K-pop · R&B · HipHop · Pop · EDM · Football",
+      detail: "R&B · HipHop · Pop · EDM · Football",
       modal: {
         title: "Off-Duty",
         subtitle: "DOWNTIME // RECHARGE",
         paragraphs: [
-          "Music is a constant in my life — I listen across K-pop, R&B, HipHop, Pop and EDM, depending on the mood and what I'm building.",
+          "Music is a constant in my life — I listen across R&B, HipHop, Pop and EDM, depending on the mood and what I'm building.",
           "When I'm away from the screen, I play football with friends. It's the best way to reset after a long debugging session.",
         ],
         rows: [
-          { label: "MUSIC", value: "K-pop · R&B · HipHop · Pop · EDM" },
+          { label: "MUSIC", value: "R&B · HipHop · Pop · EDM" },
           { label: "SPORT", value: "Football" },
           { label: "WHERE", value: "Bangkok, Thailand" },
           { label: "MOST PLAYED", value: "Whatever's on repeat" },
         ],
       } satisfies DetailSection,
     },
-    {
-      icon: "target" as const,
-      label: "MISSION",
-      value: "Global Impact",
-      detail: "Junior → Senior → Manager",
-      modal: {
-        title: "The Mission",
-        subtitle: "ROADMAP // NEXT CHAPTER",
-        paragraphs: [
-          "I want to create my own product application with global impact — something useful that reaches people well beyond my own circle.",
-          "Along the way, my plan is to grow from junior to senior and eventually into a managerial role, improving my skills at every step.",
-        ],
-        rows: [
-          { label: "SHORT TERM", value: "Senior developer" },
-          { label: "LONG TERM", value: "Managerial role" },
-          { label: "BIG GOAL", value: "Globally impactful product" },
-          { label: "STATUS", value: "In progress" },
-        ],
-      } satisfies DetailSection,
-    },
   ],
+
+  /**
+   * Work experience only. Add entries here when the data is ready —
+   * the Journey page will render them automatically.
+   */
+  experience: [] as readonly ExperienceItem[],
 
   socials: [
     {
@@ -316,20 +311,19 @@ export const profile = {
    * ------------------------------------------------------------------
    * You said the profile photo and CV aren't ready yet, so both are off.
    * To activate:
-   *   1. Drop your photo at  public/images/profile.jpg
+   *   1. Drop your photo at  public/images/profile.png
    *   2. Drop your CV at      public/cv.pdf
    *   3. Flip the flags below to `true`.
    * No other code changes are needed — placeholders swap out automatically.
    */
   flags: {
-    profilePhoto: false,
+    profilePhoto: true,
     cv: false,
   },
 } as const;
 
 export const NAV_LINKS = [
   { href: "/", label: "HOME", code: "01" },
-  { href: "/about", label: "ABOUT", code: "02" },
-  { href: "/projects", label: "PROJECTS", code: "03" },
-  { href: "/contact", label: "CONTACT", code: "04" },
+  { href: "/projects", label: "PROJECT", code: "02" },
+  { href: "/journey", label: "JOURNEY", code: "03" },
 ] as const;

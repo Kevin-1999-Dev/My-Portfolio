@@ -27,7 +27,7 @@ export default function CvDownload() {
 
             <div className="theme-inset mt-6 inline-flex flex-wrap items-center gap-3 px-4 py-3 font-mono text-xs">
               <Icon name="fileText" className="h-5 w-5 text-neon-cyan" />
-              <span className="text-ink">KEVIN_ZAW_HAN_CV.PDF</span>
+              <span className="text-ink">KAUNG_ZAW_HAN_CV.PDF</span>
               <span
                 className={`tracking-widest ${
                   available ? "text-neon-lime" : "text-neon-magenta"
