@@ -25,6 +25,24 @@ export type DetailSection = {
   readonly rows: readonly { readonly label: string; readonly value: string }[];
 };
 
+/** Projects displayed in the 3D gallery room. */
+export type ProjectItem = {
+  readonly code: string;
+  readonly title: string;
+  readonly tag: string;
+  readonly year: string;
+  readonly category: string;
+  readonly icon: "globe" | "server" | "database" | "code";
+  readonly accent: string;
+  readonly description: string;
+  readonly highlights: readonly string[];
+  readonly tech: readonly string[];
+  readonly responsive: "Yes" | "No";
+  readonly screenshot?: string;
+  readonly demo?: string;
+  readonly source?: string;
+};
+
 /** Work-experience entries shown on the Journey page. */
 export type ExperienceItem = {
   readonly code: string;
@@ -274,6 +292,60 @@ export const profile = {
           { label: "MOST PLAYED", value: "Whatever's on repeat" },
         ],
       } satisfies DetailSection,
+    },
+  ],
+
+  projects: [
+    {
+      code: "01",
+      title: "Native Farm",
+      tag: "MY FIRST PROJECT",
+      year: "2022",
+      category: "FRONT-END · E-COMMERCE",
+      icon: "globe" as const,
+      accent: "#00f0ff",
+      description:
+        "My very first project in the software journey — a responsive organic food storefront that connects buyers and sellers of natural products. Built from scratch with plain HTML and CSS while I was learning the fundamentals of the web.",
+      highlights: [
+        "Responsive layout across desktop and mobile",
+        "Product listings, offers, gallery and contact sections",
+        "First hands-on build with HTML and CSS",
+      ],
+      tech: ["HTML", "CSS"],
+      responsive: "Yes",
+      screenshot: "/images/native-farm.png",
+      demo: "https://native-farm.vercel.app/",
+      source: "https://github.com/Kevin-1999-Dev/Native-Farm-",
+    },
+    {
+      code: "02",
+      title: "Pizza Order System",
+      tag: "BACK-END · LARAVEL",
+      year: "2023",
+      category: "FULL-STACK · ORDER SYSTEM",
+      icon: "server" as const,
+      accent: "#ff2bd6",
+      description:
+        "A back-end focused ordering system built with Laravel and the Blade engine, credited to CodeLab.",
+      highlights: ["Server-side rendering with Blade", "Order flow and back-end logic"],
+      tech: ["HTML", "CSS", "JavaScript", "Bootstrap", "PHP", "Laravel"],
+      responsive: "No",
+      source: "https://github.com/Kevin-1999-Dev/Pizza-Order-System",
+    },
+    {
+      code: "03",
+      title: "Book House",
+      tag: "TEAM · ON-JOB TRAINING",
+      year: "2023",
+      category: "BACK-END · LIBRARY SYSTEM",
+      icon: "database" as const,
+      accent: "#9b6bff",
+      description:
+        "A team project built with friends Simon, Zam and Daung during on-job training — a feature-rich library system with a back-end focus.",
+      highlights: ["Collaborative team development", "Laravel back-end with multiple modules"],
+      tech: ["HTML", "CSS", "JavaScript", "Bootstrap", "PHP", "Laravel"],
+      responsive: "Yes",
+      source: "https://github.com/Kevin-1999-Dev/group2_book_house",
     },
   ],
 

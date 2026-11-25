@@ -21,7 +21,7 @@ All bio text, facts, social links, stats and work experience live in `lib/profil
 ## Project structure
 
 - `app/page.tsx` — Home page (hero, profile card, facts, CV panel)
-- `app/projects` — themed placeholder for the upcoming Project page
+- `app/projects` — clean 3-per-row project gallery (Native Farm first) with detail boxes; clicking a card opens a detail popup with demo/source links. Data lives in `lib/profile.ts` under `projects`.
 - `app/journey` — work-experience page; entries come from `profile.experience` in `lib/profile.ts`
 - `components/` — Navbar, Footer, Hero, ProfileCard, Facts, CvDownload, TypeWriter
 - `app/globals.css` — cyberpunk theme, neon palette, glitch/scanline effects

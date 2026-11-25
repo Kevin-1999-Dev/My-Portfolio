@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { profile } from "@/lib/profile";
 import { Icon } from "./Icons";
-import ProfileCard from "./ProfileCard";
+import ProfileShowcase from "./ProfileShowcase";
 import TypeWriter from "./TypeWriter";
 
 export default function Hero() {
@@ -74,7 +74,7 @@ export default function Hero() {
         </div>
 
         <div className="float-slow">
-          <ProfileCard />
+          <ProfileShowcase />
         </div>
       </div>
 
