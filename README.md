@@ -19,6 +19,7 @@ All bio text, facts, social links, stats and work experience live in `lib/profil
 ## Theme, typography & background
 
 - **Dark / light mode** — toggle in the navbar (top right). The choice is saved in `localStorage` and applied before first paint, so there is no flash. Theme colors live at the top of `app/globals.css` (`--neon-*`, `--panel-bg`, `--ink`, `--muted`, etc.).
+- **Logo** — the navbar uses React Bits Neon Logo (`components/NeonLogo.tsx`) rendering "HAN" with a cyan/magenta heat map (`components/HanLogo.tsx`), replacing the old KZ badge.
 - **Font sizes** — key sizes are set with Tailwind classes inside `components/` (hero, section headings, card values, nav links). Adjust them there.
 - **Animated background** — `.cyber-backdrop` in `app/layout.tsx` layers a thunderstorm (`components/CyberThunder.tsx`: three branching lightning bolts with two independent strike cycles + sky flashes) behind neon rain (72 angled glowing drops from `components/CyberRain.tsx`), plus a slow perspective grid, faint 3D rings, drifting orbs and a sweep beam. All keyframes are in `app/globals.css`, and motion respects `prefers-reduced-motion`.
 

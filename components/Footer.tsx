@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="flex flex-col items-center justify-between gap-8 sm:flex-row">
           <div>
             <Link href="/" className="font-display text-xl tracking-[0.16em] text-ink">
-              KZH<span className="text-neon-magenta">{"//"}</span>DEV
+              HAN<span className="text-neon-magenta">{"//"}</span>DEV
             </Link>
             <p className="mt-2 max-w-sm font-mono text-sm leading-relaxed text-muted">
               Systems behind the screens. Born in Yangon, based in Bangkok.

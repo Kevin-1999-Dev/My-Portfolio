@@ -11,7 +11,7 @@ import PageTransition from "@/components/PageTransition";
 export const metadata: Metadata = {
   title: {
     default: "Kaung Zaw Han — Software & Web Developer",
-    template: "%s // KZH.DEV",
+    template: "%s // HAN.DEV",
   },
   description:
     "Cyberpunk portfolio of Kaung Zaw Han — a software and web developer born in Yangon, Myanmar and now based in Bangkok, Thailand, building reliable digital products.",

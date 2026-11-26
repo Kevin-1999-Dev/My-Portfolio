@@ -4,6 +4,7 @@ import { useState } from "react";
 import { NAV_LINKS } from "@/lib/profile";
 import { Icon } from "./Icons";
 import ThemeToggle from "./ThemeToggle";
+import HanLogo from "./HanLogo";
 import { useTab } from "./TabContext";
 
 export default function Navbar() {
@@ -21,14 +22,11 @@ export default function Navbar() {
         <button
           type="button"
           onClick={() => select("home")}
-          className="group flex items-center gap-3"
-          aria-label="KZH DEV — home"
+          className="group flex items-center"
+          aria-label="HAN — home"
         >
-          <span className="clip-corner-sm grid h-9 w-9 place-items-center border border-neon-cyan/50 bg-neon-cyan/10 font-display text-sm font-bold text-neon-cyan shadow-[0_0_18px_rgba(0,240,255,0.18)]">
-            KZ
-          </span>
-          <span className="font-display text-base tracking-[0.16em] text-ink sm:text-lg">
-            KZH<span className="text-neon-magenta">{"//"}</span>DEV
+          <span className="relative block h-10 w-[104px] shrink-0">
+            <HanLogo />
           </span>
         </button>
 
