@@ -1,6 +1,10 @@
 # Portfolio V2 — Cyberpunk UI
 
-New portfolio for **Kaung Zaw Han (Han)**, built page by page on Next.js 16 + Tailwind 4.
+New portfolio for **Kaung Zaw Han (Han)**, built on Next.js 16 + Tailwind 4.
+
+## SPA navigation
+
+The site is a single-route SPA: `app/page.tsx` renders Home, Project or Journey based on the active tab in `components/TabContext.tsx`. Navbar tabs are buttons, so switching tabs never reloads the page or changes the URL. A React Bits pixel transition plays on each tab change. `next.config.ts` also uses `output: "export"` with `trailingSlash` and unoptimized images, so a static `out/` folder can be deployed anywhere.
 
 ## Adding the profile photo and CV (not ready yet)
 

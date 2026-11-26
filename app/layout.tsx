@@ -5,6 +5,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CyberRain from "@/components/CyberRain";
 import CyberThunder from "@/components/CyberThunder";
+import { TabProvider } from "@/components/TabContext";
+import PagePixelTransition from "@/components/PagePixelTransition";
 
 export const metadata: Metadata = {
   title: {
@@ -67,9 +69,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <div className="cyber-sweep" />
         </div>
 
-        <Navbar />
-        <main className="relative z-10 flex-1">{children}</main>
-        <Footer />
+        <TabProvider>
+          <Navbar />
+          <main className="relative z-10 flex-1">{children}</main>
+          <Footer />
+        </TabProvider>
+        <PagePixelTransition />
       </body>
     </html>
   );

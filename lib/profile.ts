@@ -395,7 +395,7 @@ export const profile = {
 } as const;
 
 export const NAV_LINKS = [
-  { href: "/", label: "HOME", code: "01" },
-  { href: "/projects", label: "PROJECT", code: "02" },
-  { href: "/journey", label: "JOURNEY", code: "03" },
+  { href: "/", label: "HOME", code: "01", key: "home" as const },
+  { href: "/projects", label: "PROJECT", code: "02", key: "projects" as const },
+  { href: "/journey", label: "JOURNEY", code: "03", key: "journey" as const },
 ] as const;
