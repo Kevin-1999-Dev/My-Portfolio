@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import CyberRain from "@/components/CyberRain";
 import CyberThunder from "@/components/CyberThunder";
 import { TabProvider } from "@/components/TabContext";
-import PagePixelTransition from "@/components/PagePixelTransition";
+import PageTransition from "@/components/PageTransition";
 
 export const metadata: Metadata = {
   title: {
@@ -74,7 +74,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <main className="relative z-10 flex-1">{children}</main>
           <Footer />
         </TabProvider>
-        <PagePixelTransition />
+        <PageTransition />
       </body>
     </html>
   );
