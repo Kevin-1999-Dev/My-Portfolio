@@ -258,6 +258,114 @@ body {
   animation: sweep 16s linear infinite;
 }
 
+/* Cyber sun — daytime only, shown in light mode */
+.cyber-sun {
+  display: none;
+}
+
+.cyber-sun-core,
+.cyber-sun-halo,
+.cyber-sun-rays {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.cyber-sun-core {
+  background: radial-gradient(
+    circle,
+    #ffffff 0%,
+    #ffe9a8 32%,
+    #ffc26b 58%,
+    color-mix(in srgb, var(--neon-cyan) 55%, transparent) 100%
+  );
+  box-shadow: 0 0 50px rgba(255, 196, 107, 0.65), 0 0 120px rgba(255, 160, 90, 0.35);
+  animation: sun-pulse 6s ease-in-out infinite;
+}
+
+.cyber-sun-halo {
+  background: radial-gradient(
+    circle,
+    rgba(255, 214, 140, 0.45) 0%,
+    rgba(120, 220, 255, 0.16) 45%,
+    transparent 70%
+  );
+  animation: sun-breathe 8s ease-in-out infinite;
+}
+
+.cyber-sun-rays {
+  background: repeating-conic-gradient(
+    from 0deg,
+    transparent 0deg 4deg,
+    rgba(255, 214, 140, 0.5) 4.5deg 6.5deg,
+    transparent 7deg 12deg
+  );
+  -webkit-mask-image: radial-gradient(circle, transparent 34%, #000 36%, transparent 78%);
+  mask-image: radial-gradient(circle, transparent 34%, #000 36%, transparent 78%);
+  animation: sun-spin 40s linear infinite;
+}
+
+.cyber-sun-rays::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: repeating-conic-gradient(
+    from 7deg,
+    transparent 0deg 6deg,
+    rgba(0, 240, 255, 0.32) 6.5deg 8deg,
+    transparent 8.5deg 18deg
+  );
+  -webkit-mask-image: radial-gradient(circle, transparent 44%, #000 46%, transparent 92%);
+  mask-image: radial-gradient(circle, transparent 44%, #000 46%, transparent 92%);
+  animation: sun-spin-reverse 55s linear infinite;
+}
+
+:root[data-theme="light"] .cyber-thunder,
+:root[data-theme="light"] .cyber-rain,
+:root[data-theme="light"] .cyber-sweep {
+  display: none;
+}
+
+:root[data-theme="light"] .cyber-sun {
+  display: block;
+  position: absolute;
+  top: 4%;
+  right: 8%;
+  width: 320px;
+  height: 320px;
+}
+
+:root[data-theme="light"] .cyber-sun-core {
+  inset: 32%;
+}
+
+:root[data-theme="light"] .cyber-sun-halo {
+  inset: -20%;
+}
+
+:root[data-theme="light"] .cyber-sun-rays {
+  inset: -12%;
+}
+
+@keyframes sun-pulse {
+  0%, 100% { transform: scale(1); filter: brightness(1); }
+  50% { transform: scale(1.06); filter: brightness(1.15); }
+}
+
+@keyframes sun-breathe {
+  0%, 100% { opacity: 0.75; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.08); }
+}
+
+@keyframes sun-spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes sun-spin-reverse {
+  to { transform: rotate(-360deg); }
+}
+
 /* Neon rain — the dominant background motion */
 .cyber-rain {
   position: absolute;

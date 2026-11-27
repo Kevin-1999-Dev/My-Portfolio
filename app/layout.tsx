@@ -64,6 +64,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             <span />
           </div>
           <div className="cyber-grid-3d" />
+          <div className="cyber-sun">
+            <span className="cyber-sun-halo" />
+            <span className="cyber-sun-rays" />
+            <span className="cyber-sun-core" />
+          </div>
           <CyberThunder />
           <CyberRain />
           <div className="cyber-sweep" />
